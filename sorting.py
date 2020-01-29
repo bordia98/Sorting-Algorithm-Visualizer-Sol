@@ -212,3 +212,44 @@ def quick_sort(nums):  # n^2
             _quick_sort(items, split_index + 1, high)
 
     _quick_sort(nums, 0, nums.get_len() - 1)
+
+def cocktail_sort(nums):  # worst Case O(N*N)
+
+    # getting the total length
+    n = nums.get_len()
+    swap = True
+    start = 0
+    end = n-1
+
+    # Looping till the values are not sorted
+    while(swap):
+
+        swap = False
+
+        # Moving the larget value to the end
+        for i in range(start,end):
+            if(nums.values[i] > nums.values[i+1]):
+                nums.swap(i,i+1)
+                swap = True
+
+        # if already sorted break
+        if(swap == False):
+            break
+
+        swap = False
+
+        # As the last value is the biggest so decreasing the end by 1
+        end = end - 1
+
+        # Moving the smallest value to the front
+        for i in range(end-1,start-1,-1):
+            if (nums.values[i]>nums.values[i+1]):
+                nums.swap(i,i+1)
+                swap = True
+
+        # As start value is the smallest so increasing the start by 1
+        start = start + 1
+
+        # As already in the sorted order
+        if(swap == False):
+            break
