@@ -215,6 +215,14 @@ def quick_sort(nums):  # n^2
 
 def cocktail_sort(nums):  # worst Case O(N*N)
 
+    """
+    As any of the algorithm could be added
+    So I choosed cocktail sort algorithm it is extension of bubble sort algorithm
+    but in this the transverse happen in both sides
+    i.e. Movement of largest element to the right
+    and movement of the smallest element to the left 
+    The below code shows the algorithm
+    """
     # getting the total length
     n = nums.get_len()
     swap = True
